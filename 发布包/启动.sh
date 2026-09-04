@@ -32,7 +32,7 @@ echo "[微笑] 等待就绪…"
 for i in $(seq 1 40); do
   sleep 2
   if curl -s -o /dev/null --max-time 2 https://simbasmile.pages.dev/api/members 2>/dev/null; then
-    echo "[微笑] ✅ 已就绪: http://localhost:8080"
+    echo "[微笑] ✅ 已就绪: https://simbasmile.pages.dev/"
     break
   fi
   if [ "$i" -eq 40 ]; then
