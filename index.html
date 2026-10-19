@@ -3,105 +3,119 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-<title>微笑 · Smile Community</title>
-<meta name="description" content="微笑 —— 一个安静、私密、属于自己的线上社区。信息流 · 作品集 · 站内信箱 · 个性身份。" />
+<title>微笑Smile · Smile Community</title>
+<meta name="description" content="微笑Smile —— 一个安静、私密、属于自己的线上社区。信息流 · 作品集 · 站内信箱 · 个性身份。" />
 <meta name="theme-color" content="#faf9f5" />
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ======== 顶栏 ======== -->
+<!-- ======== 顶栏(仅保留品牌) ======== -->
 <header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="#top">
+    <a class="brand" href="javascript:void(0)" onclick="showPanel('home', this)">
       <span class="brand-dot"></span>
-      <span class="brand-name">微笑</span>
+      <span class="brand-name">微笑Smile</span>
     </a>
-    <nav class="nav-links">
-      <a href="#features">功能</a>
-      <a href="#about">关于</a>
-      <a href="#download">下载</a>
-    </nav>
-    <a class="btn btn-primary nav-cta" href="#download">立即使用</a>
   </div>
 </header>
 
+<!-- ======== 右侧竖向 dock(与控制台同款) ======== -->
+<aside class="side-dock" id="sideDock" aria-label="页面导航">
+  <button type="button" class="dock-btn active" data-panel="home" onclick="showPanel('home', this)">
+    <span class="di">✦</span><span class="dl">微笑Smile</span>
+  </button>
+  <button type="button" class="dock-btn" data-panel="features" onclick="showPanel('features', this)">
+    <span class="di">◍</span><span class="dl">特点</span>
+  </button>
+  <button type="button" class="dock-btn" data-panel="about" onclick="showPanel('about', this)">
+    <span class="di">◎</span><span class="dl">初衷</span>
+  </button>
+  <button type="button" class="dock-btn" data-panel="join" onclick="showPanel('join', this)">
+    <span class="di">↗</span><span class="dl">加入Smile</span>
+  </button>
+</aside>
+
 <main id="top">
 
-  <!-- ======== Hero ======== -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <span class="eyebrow">一个安静、私密、属于自己的地方</span>
-        <h1>微笑着，<br/>分享你与世界。</h1>
-        <p class="hero-sub">
-          在微笑，用真实的身份记录生活、展示作品、与同好安静地交流。
-          没有噪音，只有你关心的人与事。
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#download">下载 App</a>
-          <a class="btn btn-ghost" href="#features">了解更多 ↓</a>
+  <!-- ======== 微笑Smile: Hero ======== -->
+  <section class="panel" data-panel="home" id="home">
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow">一个安静、私密、属于自己的地方</span>
+          <h1>微笑着，<br/>分享你与世界。</h1>
+          <p class="hero-sub">
+            在微笑Smile，用真实的身份记录生活、展示作品、与同好安静地交流。
+            没有噪音，只有你关心的人与事。
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="javascript:void(0)" onclick="showPanel('join', this)">加入 Smile</a>
+            <a class="btn btn-ghost" href="javascript:void(0)" onclick="showPanel('features', this)">了解特点 →</a>
+          </div>
+          <div class="hero-note">
+            网页版已上线公网，永久地址 <b>simbasmile.ccwu.cc</b> · 手机/平板体验最佳
+          </div>
         </div>
-        <div class="hero-note">
-          网页版已上线公网，永久地址 <b>simbasmile.ccwu.cc</b> · 手机/平板体验最佳
-        </div>
-      </div>
 
-      <!-- 手机示意框:展示 App 的三个底部 tab -->
-      <div class="hero-phone" aria-hidden="true">
-        <div class="phone-frame">
-          <div class="screen-top">
-            <span class="screen-pill"></span>
-          </div>
-          <div class="screen-content">
-            <div class="card card-a"></div>
-            <div class="card card-b"></div>
-            <div class="card card-c"></div>
-          </div>
-          <div class="dock">
-            <span class="dock-item"><b class="smile-key">Y</b></span>
-            <span class="dock-item active"><b>⌂</b></span>
-            <span class="dock-item"><b class="smile-key">A</b></span>
+        <!-- 手机示意框:展示 App 的三个底部 tab -->
+        <div class="hero-phone" aria-hidden="true">
+          <div class="phone-frame">
+            <div class="screen-top">
+              <span class="screen-pill"></span>
+            </div>
+            <div class="screen-content">
+              <div class="card card-a"></div>
+              <div class="card card-b"></div>
+              <div class="card card-c"></div>
+            </div>
+            <div class="dock">
+              <span class="dock-item"><b class="smile-key">Y</b></span>
+              <span class="dock-item active"><b>⌂</b></span>
+              <span class="dock-item"><b class="smile-key">A</b></span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======== 特性 ======== -->
-  <section class="features" id="features">
-    <div class="section-head">
-      <span class="eyebrow">Features</span>
-      <h2>在一个社区里，<br/>安放生活的全部。</h2>
-      <p>以身份为中心，把表达、创造与联系，收进一处私密空间。</p>
-    </div>
+  <!-- ======== 特点 ======== -->
+  <section class="panel" data-panel="features" id="features" hidden>
+    <div class="features">
+      <div class="section-head">
+        <span class="eyebrow">特点</span>
+        <h2>在一个社区里，<br/>安放生活的全部。</h2>
+        <p>以身份为中心，把表达、创造与联系，收进一处私密空间。</p>
+      </div>
 
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon">◉</div>
-        <h3>信息流</h3>
-        <p>发布日常动态，记录每一个值得微笑的瞬间。关注与收藏，让关系自然生长。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">✧</div>
-        <h3>作品集</h3>
-        <p>陈列你的创作与工作。每一条内容都可以被欣赏、评论与二次互动。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">✉</div>
-        <h3>站内信箱</h3>
-        <p>安静的私信系统，让重要的话，只对重要的人说。</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">◎</div>
-        <h3>个性身份</h3>
-        <p>一套围绕「身份」的社交模型 —— 你是谁，决定了你如何被看见。</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">◉</div>
+          <h3>信息流</h3>
+          <p>发布日常动态，记录每一个值得微笑的瞬间。关注与收藏，让关系自然生长。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✧</div>
+          <h3>作品集</h3>
+          <p>陈列你的创作与工作。每一条内容都可以被欣赏、评论与二次互动。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✉</div>
+          <h3>站内信箱</h3>
+          <p>安静的私信系统，让重要的话，只对重要的人说。</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">◎</div>
+          <h3>个性身份</h3>
+          <p>一套围绕「身份」的社交模型 —— 你是谁，决定了你如何被看见。</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ======== 关于 ======== -->
-  <section class="about" id="about">
+  <!-- ======== 初衷 ======== -->
+  <section class="panel" data-panel="about" id="about" hidden>
     <div class="about-inner">
       <div class="about-visual" aria-hidden="true">
         <div class="about-card about-1">微笑着分享</div>
@@ -109,11 +123,11 @@
         <div class="about-card about-3">只属于你的角落</div>
       </div>
       <div class="about-copy">
-        <span class="eyebrow">About</span>
-        <h2>为什么是「微笑」？</h2>
+        <span class="eyebrow">初衷</span>
+        <h2>为什么是「微笑Smile」？</h2>
         <p>
           我们相信，好的社区不靠喧哗，而靠让每个人都能舒服地做自己。
-          微笑以「身份 + 信息 + 作品 + 信箱」为骨架，
+          微笑Smile 以「身份 + 信息 + 作品 + 信箱」为骨架，
           用极简的设计语言，把注意力还给内容与关系本身。
         </p>
         <ul class="about-list">
@@ -125,25 +139,27 @@
     </div>
   </section>
 
-  <!-- ======== 下载 ======== -->
-  <section class="download" id="download">
-    <div class="download-inner">
-      <span class="eyebrow">Get Started</span>
-      <h2>现在，加入微笑。</h2>
-      <p class="download-sub">体验请用移动设备（手机 / 平板）访问。</p>
-      <div class="download-cards">
-        <a class="dl-card" href="https://simbasmile.ccwu.cc" target="_blank" rel="noopener">
-          <span class="dl-title">打开网页版</span>
-          <span class="dl-sub">永久公网地址 · 点击直接使用 →</span>
-        </a>
-        <a class="dl-card" href="apk/微笑-v2.apk" download>
-          <span class="dl-title">下载 Android App</span>
-          <span class="dl-sub">.apk 安装包 v2（含全新界面，已接通公网）→</span>
-        </a>
+  <!-- ======== 加入Smile ======== -->
+  <section class="panel" data-panel="join" id="join" hidden>
+    <div class="download">
+      <div class="download-inner">
+        <span class="eyebrow">加入Smile</span>
+        <h2>现在，加入微笑Smile。</h2>
+        <p class="download-sub">体验请用移动设备（手机 / 平板）访问。</p>
+        <div class="download-cards">
+          <a class="dl-card" href="https://simbasmile.ccwu.cc" target="_blank" rel="noopener">
+            <span class="dl-title">打开网页版</span>
+            <span class="dl-sub">永久公网地址 · 点击直接使用 →</span>
+          </a>
+          <a class="dl-card" href="apk/Smile.Y_01.apk" download>
+            <span class="dl-title">下载 Android App</span>
+            <span class="dl-sub">.apk 安装包 Smile.Y_01（含深色模式，已接通公网）→</span>
+          </a>
+        </div>
+        <p class="download-note">
+          网页版与 Android App 均已接入公网，永久地址：<a href="https://simbasmile.ccwu.cc" target="_blank" rel="noopener">simbasmile.ccwu.cc</a>。App 装好后，在任何网络都能登录使用。
+        </p>
       </div>
-      <p class="download-note">
-        网页版与 Android App 均已接入公网，永久地址：<a href="https://simbasmile.ccwu.cc" target="_blank" rel="noopener">simbasmile.ccwu.cc</a>。App 装好后，在任何网络都能登录使用。
-      </p>
     </div>
   </section>
 
@@ -152,10 +168,50 @@
 <!-- ======== 页脚 ======== -->
 <footer class="footer">
   <div class="footer-inner">
-    <span class="footer-brand">微笑 · Smile Community</span>
+    <span class="footer-brand">微笑Smile · Smile Community</span>
     <span class="footer-copy">© 2026 Smile Community</span>
   </div>
 </footer>
+
+<script>
+  const PANELS = Array.from(document.querySelectorAll('.panel'));
+  const DOCK_BTNS = Array.from(document.querySelectorAll('.side-dock .dock-btn'));
+
+  function showPanel(name, el) {
+    const target = PANELS.find(p => p.dataset.panel === name);
+    if (!target) return;
+
+    PANELS.forEach(p => {
+      const on = p === target;
+      if (on) {
+        p.hidden = false;
+        p.classList.remove('panel-in');
+        void p.offsetWidth;      /* 重启动画 */
+        p.classList.add('panel-in');
+      } else {
+        p.hidden = true;
+        p.classList.remove('panel-in');
+      }
+    });
+
+    DOCK_BTNS.forEach(b => b.classList.toggle('active', b.dataset.panel === name));
+
+    if (el && el.classList && el.classList.contains('dock-btn')) {
+      el.classList.remove('pop');
+      void el.offsetWidth;
+      el.classList.add('pop');
+    }
+
+    window.scrollTo(0, 0);
+    if (history.replaceState) history.replaceState(null, '', '#' + name);
+  }
+
+  /* 支持直接带 #features / #about / #join 打开 */
+  const initial = (location.hash || '').replace('#', '');
+  if (initial && initial !== 'home' && PANELS.some(p => p.dataset.panel === initial)) {
+    showPanel(initial);
+  }
+</script>
 
 </body>
 </html>
